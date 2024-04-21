@@ -1,7 +1,10 @@
+import {useTranslations} from "next-intl";
 
 export default function Home() {
+  const t = useTranslations("Index")
   return (
     <main className="flex min-h-screen flex-col items-center p-24">
+      <div>{t("title")}</div>
       <h1>Games</h1>
       <div className="flex gap-4">
         <div className="w-[10em] h-[10em] bg-amber-300">
