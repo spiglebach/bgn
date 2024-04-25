@@ -41,7 +41,7 @@ export const GameCard = ({game}: GameCardProps) => {
           />
           <div className="z-20 flex flex-col gap-1 absolute top-[.5em] left-0">
             <Label icon={<Image src="/icons/people.svg" className="h-[1.5em]"/>} text={playerCount} width={`${playerCountWidth}em`} bgColor="white"/>
-            {game.gameType.map(gameType => <GameTypeLabel gameType={gameType} />)}
+            {game.gameType.map(gameType => <GameTypeLabel key={gameType} gameType={gameType} />)}
           </div>
           <div className="z-20 h-[10em] absolute bottom-[0em] right-0">
             <GameComplexityMeter complexity={game.complexity} />
@@ -96,7 +96,7 @@ const GameTypeLabel = ({gameType}: GameTypeLabelProps) => {
     bgColor = "#ff5353"
   }
   return (
-    <Tooltip key={gameType} content={t(gameTypeName)} placement="right-end">
+    <Tooltip content={t(gameTypeName)} placement="right-end">
       <Label icon={<Image src={icon} className="h-[1.5em]"/>} text={""} width="3em" bgColor={bgColor} />
     </Tooltip>
   )
@@ -113,8 +113,7 @@ const GameComplexityMeter = ({complexity}: GameComplexityMeterProps) => {
   return (
     <Tooltip content={`${t("complexity")}: ${complexity} / 5`} placement="bottom">
       <div className="h-[100%] flex items-end w-[1em] opacity-80 bg-yellow-100 rounded-full">
-        <div style={{height: `${height}%`, background: color}}
-             className="w-[80%] mx-auto mb-1 bg-pink-300 rounded-full"></div>
+        <div style={{height: `${height}%`, background: color}} className="w-[80%] mx-auto mb-1 rounded-full"></div>
       </div>
     </Tooltip>
   )
