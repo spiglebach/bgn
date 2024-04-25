@@ -33,7 +33,7 @@ export const GameCard = ({game}: GameCardProps) => {
         <CardBody className="overflow-visible p-0">
           <Image
             shadow="sm"
-            radius="lg"
+            radius="none"
             width="100%"
             alt={game.name}
             className="w-full object-cover h-[10em]"
