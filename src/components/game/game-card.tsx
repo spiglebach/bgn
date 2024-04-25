@@ -96,7 +96,7 @@ const GameTypeLabel = ({gameType}: GameTypeLabelProps) => {
     bgColor = "#ff5353"
   }
   return (
-    <Tooltip content={t(gameTypeName)} placement="right-end">
+    <Tooltip content={t(gameTypeName)} placement="right-end" closeDelay={0}>
       <Label icon={<Image src={icon} className="h-[1.5em]"/>} text={""} width="3em" bgColor={bgColor} />
     </Tooltip>
   )
@@ -111,7 +111,7 @@ const GameComplexityMeter = ({complexity}: GameComplexityMeterProps) => {
   const height = Math.floor((complexity / 5.0) * 100)
   const color = colorGradient((height / 100.0), {red: 30, green: 200, blue: 0}, {red: 255, green: 200, blue: 0}, {red: 255, green: 0, blue: 0})
   return (
-    <Tooltip content={`${t("complexity")}: ${complexity} / 5`} placement="bottom">
+    <Tooltip content={`${t("complexity")}: ${complexity} / 5`} placement="bottom" closeDelay={0}>
       <div className="h-[100%] flex items-end w-[1em] opacity-80 bg-yellow-100 rounded-full">
         <div style={{height: `${height}%`, background: color}} className="w-[80%] mx-auto mb-1 rounded-full"></div>
       </div>
