@@ -1,5 +1,35 @@
 {
   "Index": {
-    "title": "Hello világ!"
+    "title": "Hello világ!",
+    "CountdownTimer": {
+      "header": "A következő alkalomig:",
+      "NumberPanel": {
+        "days": "nap",
+        "hours": "óra",
+        "minutes": "perc"
+      },
+      "date": "Dátum:",
+      "participants": "Résztvevők:"
+    },
+    "NextOccasion": {
+      "SuggestedGames": {
+        "header": "Ajánlott játékok"
+      }
+    }
+  },
+  "GameList": {
+    "header": "Játékaink"
+  },
+  "Game": {
+    "complexity": "Komplexitás"
+  },
+  "Common": {
+    "GameType": {
+      "Competitive": "Kompetitív",
+      "Cooperative": "Kooperatív",
+      "Confrontative": "Konfrontatív",
+      "Detective": "Detektív",
+      "Social": "Közösségi"
+    }
   }
 }
