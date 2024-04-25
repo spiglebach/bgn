@@ -18,7 +18,17 @@
     }
   },
   "GameList": {
-    "header": "Játékaink"
+    "header": "Játékaink",
+    "Sorting": {
+      "sortBy": "Rendezés",
+      "sortDirection": "Rendezés iránya",
+      "name": "Név",
+      "complexity": "Komplexitás",
+      "Order": {
+        "asc": "Növekvő",
+        "desc": "Csökkenő"
+      }
+    }
   },
   "Game": {
     "complexity": "Komplexitás"
