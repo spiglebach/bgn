@@ -62,7 +62,7 @@ interface DateDisplayProps {
 }
 
 const DateDisplay = ({date, label}: DateDisplayProps) => {
-  const dateMonth = date.getMonth()
+  const dateMonth = date.getMonth() + 1
   const dateDay = date.getDate()
   let displayMonth: string
   if (dateMonth < 10) {

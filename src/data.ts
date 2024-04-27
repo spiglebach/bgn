@@ -193,7 +193,7 @@ export const games: Game[] = [
 
 export const gameOccasions: GameOccasion[] = [
   {
-    startTime: new Date(2024, 0O6, 10, 17, 30),
+    startTime: new Date(2024, 0O5, 9, 17, 30),
     participants: {
       accepted: 5,
       declined: 2,
