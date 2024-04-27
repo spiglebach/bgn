@@ -13,7 +13,12 @@
     },
     "NextOccasion": {
       "SuggestedGames": {
-        "header": "Ajánlott játékok"
+        "header": "Ajánlott játékok",
+        "Types": {
+          "Simple": "Egyszerű",
+          "Complex": "Összetett",
+          "Social": "Közösségi"
+        }
       }
     }
   },

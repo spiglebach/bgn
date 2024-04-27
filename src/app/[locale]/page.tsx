@@ -4,6 +4,7 @@ import Countdown from "@/components/countdown/countdown";
 import {GameList} from "@/components/game/game-list";
 import {GameCard} from "@/components/game/game-card";
 import {Header} from "@/components/layout/header";
+import {GameCardPager} from "@/components/game/game-card-pager";
 
 export default function Home() {
   const t = useTranslations("Index")
@@ -32,8 +33,21 @@ export default function Home() {
         </Header>
       </div>
       <div className="mt-10">
-        <h2 className="text-2xl text-center mb-4">{t("NextOccasion.SuggestedGames.header")}</h2>
-
+        <Header level={2} className="mb-4">{t("NextOccasion.SuggestedGames.header")}</Header>
+        <div className="flex gap-5">
+          <div>
+            <Header level={3}>{t("NextOccasion.SuggestedGames.Types.Simple")}</Header>
+            <GameCardPager gameCards={[<GameCard game={games[21]} />]} />
+          </div>
+          <div>
+            <Header level={3}>{t("NextOccasion.SuggestedGames.Types.Complex")}</Header>
+            <GameCardPager gameCards={[<GameCard game={games[2]} />, <GameCard game={games[4]} />]} />
+          </div>
+          <div>
+            <Header level={3}>{t("NextOccasion.SuggestedGames.Types.Social")}</Header>
+            <GameCardPager gameCards={[<GameCard game={games[5]}/>, <GameCard game={games[15]} />]} />
+          </div>
+        </div>
       </div>
       <div className="mt-10">
         <GameList />
