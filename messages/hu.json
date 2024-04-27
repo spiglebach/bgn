@@ -24,6 +24,7 @@
   },
   "GameList": {
     "header": "Játékaink",
+    "numberOfGames": " játék",
     "Sorting": {
       "sortBy": "Rendezés",
       "sortDirection": "Rendezés iránya",

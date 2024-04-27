@@ -49,7 +49,9 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="mt-10">
+      <div className="my-10">
+      </div>
+      <div>
         <GameList />
       </div>
     </main>

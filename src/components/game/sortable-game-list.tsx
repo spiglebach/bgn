@@ -45,7 +45,7 @@ export const SortableGameList = ({sortOptions, gamesWithCard, orderOptions, labe
 
   return (
     <div>
-      <div className="flex gap-10 justify-center mb-10 border-1 border-black rounded-xl w-[30em] mx-auto bg-gray-100" >
+      <div className="flex gap-10 justify-center mb-4 border-1 border-black rounded-xl w-[30em] mx-auto bg-gray-100" >
         <RadioGroup
           className="p-3"
           label={sortBy}

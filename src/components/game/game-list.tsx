@@ -23,7 +23,10 @@ export const GameList = () => {
 
   return (
     <div>
-      <Header level={2} className="mb-4">{t("header")}</Header>
+      <div className="flex flex-col items-center mb-3">
+        <Header level={2}>{t("header")}</Header>
+        <div className="text-gray-500"><span className="font-bold">{games.length}</span><span>{t("numberOfGames")}</span></div>
+      </div>
       <div>
         <SortableGameList sortOptions={sortOptions} gamesWithCard={gamesWithCard} orderOptions={orderOptions} labels={{sortBy: t("Sorting.sortBy"), sortDirection: t("Sorting.sortDirection")}} />
       </div>
