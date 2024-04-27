@@ -97,7 +97,7 @@ const GameTypeLabel = ({gameType}: GameTypeLabelProps) => {
   }
   return (
     <Tooltip content={t(gameTypeName)} placement="right-end" closeDelay={0}>
-      <Label icon={<Image src={icon} className="h-[1.5em]"/>} text={""} width="3em" bgColor={bgColor} />
+      <Label icon={<Image src={icon} className="h-[1.5em]"/>} text={""} width="2.5em" bgColor={bgColor} />
     </Tooltip>
   )
 }
@@ -112,8 +112,8 @@ const GameComplexityMeter = ({complexity}: GameComplexityMeterProps) => {
   const color = colorGradient((height / 100.0), {red: 30, green: 200, blue: 0}, {red: 255, green: 200, blue: 0}, {red: 255, green: 0, blue: 0})
   return (
     <Tooltip content={`${t("complexity")}: ${complexity} / 5`} placement="bottom" closeDelay={0}>
-      <div className="h-[100%] flex items-end w-[1em] opacity-80 bg-yellow-100 rounded-full">
-        <div style={{height: `${height}%`, background: color}} className="w-[80%] mx-auto mb-1 rounded-full"></div>
+      <div className="h-[100%] flex items-end w-[1em] opacity-80 bg-yellow-100 rounded-t-full">
+        <div style={{height: `${height}%`, background: color}} className="w-[80%] mx-auto mb-0 rounded-t-full"></div>
       </div>
     </Tooltip>
   )
@@ -146,7 +146,7 @@ function colorGradient(fadeFraction: number, rgbColor1: Color, rgbColor2: Color,
   let diffGreen = color2.green - color1.green;
   let diffBlue = color2.blue - color1.blue;
 
-  var gradient = {
+  const gradient = {
     red: Math.floor(color1.red + (diffRed * fade)),
     green: Math.floor(color1.green + (diffGreen * fade)),
     blue: Math.floor(color1.blue + (diffBlue * fade)),

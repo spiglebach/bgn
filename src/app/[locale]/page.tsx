@@ -1,7 +1,9 @@
 import {useTranslations} from "next-intl";
-import {gameOccasions} from "@/data";
+import {gameOccasions, games} from "@/data";
 import Countdown from "@/components/countdown/countdown";
 import {GameList} from "@/components/game/game-list";
+import {GameCard} from "@/components/game/game-card";
+import {Header} from "@/components/layout/header";
 
 export default function Home() {
   const t = useTranslations("Index")
@@ -21,13 +23,13 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center p-24">
       <div>
-        <h1 className="text-4xl text-center">{t("CountdownTimer.header")}</h1>
+        <Header level={1}>{t("CountdownTimer.header")}</Header>
         <Countdown targetTime={nextGameOccasionStartTime} numberPanelLabels={numberPanelLabels} />
         <DateDisplay date={nextGameOccasionStartTime} label={t("CountdownTimer.date")} />
-        <h2 className="text-2xl text-center">
+        <Header level={2}>
           <span>{t("CountdownTimer.participants")} </span>
           <span>{nextGameOccasionAcceptedParticipants}</span>
-        </h2>
+        </Header>
       </div>
       <div className="mt-10">
         <h2 className="text-2xl text-center mb-4">{t("NextOccasion.SuggestedGames.header")}</h2>
@@ -62,7 +64,7 @@ const DateDisplay = ({date, label}: DateDisplayProps) => {
   }
   const dateStr = `${date.getFullYear()}. ${displayMonth}. ${displayDay}.`
   return (
-    <h2 className=" text-center text-2xl"><span>{label}</span> <span>{dateStr}</span></h2>
+    <Header level={2}><span>{label}</span> <span>{dateStr}</span></Header>
   )
 }
 

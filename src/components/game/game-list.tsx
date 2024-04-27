@@ -1,14 +1,15 @@
 import {games} from "@/data";
 import {GameCard} from "@/components/game/game-card";
 import {useTranslations} from "next-intl";
-import {GameWithCard, OrderOption, SortableGameList} from "@/components/game/SortableGameList";
+import {GameSortOption, GameWithCard, OrderOption, SortableGameList} from "@/components/game/sortable-game-list";
+import {Header} from "@/components/layout/header";
 
 
 
 export const GameList = () => {
   const t = useTranslations("GameList")
 
-  const sortOptions: SortOption[] = [
+  const sortOptions: GameSortOption[] = [
     {value: "name", label: t("Sorting.name")},
     {value: "complexity", label: t("Sorting.complexity")}
   ]
@@ -22,7 +23,7 @@ export const GameList = () => {
 
   return (
     <div>
-      <h2 className="text-2xl text-center mb-4">{t("header")}</h2>
+      <Header level={2} className="mb-4">{t("header")}</Header>
       <div>
         <SortableGameList sortOptions={sortOptions} gamesWithCard={gamesWithCard} orderOptions={orderOptions} labels={{sortBy: t("Sorting.sortBy"), sortDirection: t("Sorting.sortDirection")}} />
       </div>

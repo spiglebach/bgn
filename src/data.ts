@@ -171,7 +171,7 @@ export const games: Game[] = [
     maximumPlayerCount: 2,
     complexity: 1.36,
     image: "/games/placeholder.png",
-    gameType: [GameType.Cooperative]
+    gameType: [GameType.Social, GameType.Cooperative]
   },
   {
     name: "Kariba",

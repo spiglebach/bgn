@@ -50,6 +50,7 @@ export const SortableGameList = ({sortOptions, gamesWithCard, orderOptions, labe
           className="p-3"
           label={sortBy}
           value={sort}
+          // @ts-ignore
           onChange={element => setSort(element.target.value)}
         >
           {sortOptions.map(option => <Radio key={option.value} value={option.value}>{option.label}</Radio>)}
@@ -58,6 +59,7 @@ export const SortableGameList = ({sortOptions, gamesWithCard, orderOptions, labe
           className="p-3"
           label={sortDirection}
           value={order}
+          // @ts-ignore
           onChange={element => setOrder(element.target.value)}
         >
           {orderOptions.map(option => <Radio key={option.value} value={option.value}>{option.label}</Radio>)}
