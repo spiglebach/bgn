@@ -29,7 +29,7 @@ export default function Countdown({targetTime, numberPanelLabels: {days, hours, 
   const startTimeMinuteDifference = Math.floor(startTimeDiffInMinutes - (startTimeDayDifference * (60 * 24)) - (startTimeHourDifference * 60))
 
   return (
-    <div className="flex items-center my-5">
+    <div className="flex items-center my-5 justify-center">
       <NumberDisplay number={startTimeDayDifference} numberLabel={days} />
       <NumberSeparator />
       <NumberDisplay number={startTimeHourDifference} numberLabel={hours} />
