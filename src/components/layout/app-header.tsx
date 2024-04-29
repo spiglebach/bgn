@@ -1,10 +1,11 @@
 'use client'
-import Link from "next/link";
+
 import {
   Navbar,
   NavbarBrand,
   NavbarContent,
 } from "@nextui-org/react";
+import {Link} from "@/navigation";
 
 
 export default function AppHeader() {

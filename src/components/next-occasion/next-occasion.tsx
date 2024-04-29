@@ -5,6 +5,7 @@ import {DateDisplay} from "@/components/next-occasion/date-display";
 import {useTranslations} from "next-intl";
 import {GameSuggestions} from "@/components/next-occasion/game-suggestions";
 import {Button} from "@nextui-org/react";
+import {Link} from "@/navigation";
 
 export const NextOccasion = () => {
   const t = useTranslations("NextOccasion")
@@ -46,11 +47,15 @@ export const NextOccasion = () => {
 const NoNextOccasion = () => {
   const t = useTranslations("NextOccasion.Empty")
   return (
-    <div className="border-1 rounded-xl border-gray-400 px-10 pt-8 pb-14">
+    <div className="border-1 rounded-xl border-gray-400 px-10 py-28">
       <Header level={1} className="mb-7">{t("header")}</Header>
-      <div className="flex justify-center"><Button color="success">
-        {t("newButton")}
-      </Button></div>
+      <div className="flex justify-center">
+        <Link href="/occasions/new">
+          <Button color="success">
+            {t("newButton")}
+          </Button>
+        </Link>
+      </div>
     </div>
   )
 }

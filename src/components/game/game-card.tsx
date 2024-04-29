@@ -1,7 +1,7 @@
 import {Game, GameType} from "@/model/model";
 import {useTranslations} from "next-intl";
 import {Card, CardBody, CardFooter} from "@nextui-org/card";
-import {Image} from "@nextui-org/image";
+import Image from "next/image"
 import {Tooltip} from "@nextui-org/react";
 import {ReactNode} from "react";
 
@@ -10,6 +10,8 @@ interface GameCardProps {
 }
 
 export const GameCard = ({game}: GameCardProps) => {
+  const t = useTranslations("Common")
+
   const gameMinPlayers = game.minimumPlayerCount
   const gameMaxPlayers = game.maximumPlayerCount
   let playerCount: string
@@ -21,26 +23,30 @@ export const GameCard = ({game}: GameCardProps) => {
   const playerCountChars = playerCount.length
   let playerCountWidth: number
   if (playerCountChars === 1) {
-    playerCountWidth = 3.5
-  } else if (playerCountChars <= 3) {
     playerCountWidth = 4.5
+  } else if (playerCountChars <= 3) {
+    playerCountWidth = 5.5
+  } else if (playerCountChars <=5) {
+    playerCountWidth = 6.5
   } else {
-    playerCountWidth = 6
+    playerCountWidth = 7.5
   }
+
+  const numPlayersIconAlt = t("numberOfPlayersIcon")
+
   return (
     <div key={game.name}>
       <Card key={game.name} className="w-[12em] h-[14em] bg-amber-300 relative">
         <CardBody className="overflow-visible p-0">
           <Image
-            shadow="sm"
-            radius="none"
-            width="100%"
+            width="400"
+            height="400"
             alt={game.name}
             className="w-full object-cover h-[10em]"
             src={game.image}
           />
           <div className="z-20 flex flex-col gap-1 absolute top-[.5em] left-0">
-            <Label icon={<Image src="/icons/people.svg" className="h-[1.5em]"/>} text={playerCount} width={`${playerCountWidth}em`} bgColor="white"/>
+            <Label icon={<Image src="/icons/people.svg" width="40" height="40" alt={numPlayersIconAlt} className="h-[1.5em]"/>} text={playerCount} width={`${playerCountWidth}em`} bgColor="white"/>
             {game.gameType.map(gameType => <GameTypeLabel key={gameType} gameType={gameType} />)}
           </div>
           <div className="z-20 h-[10em] absolute bottom-[0em] right-0">
@@ -82,9 +88,12 @@ interface GameTypeLabelProps {
 }
 
 const GameTypeLabel = ({gameType}: GameTypeLabelProps) => {
-  const t = useTranslations("Common.GameType")
+  const t = useTranslations("Common")
   const gameTypeName = GameType[gameType]
+  const translatedGameTypeName = t(`GameType.${gameTypeName}`)
   const icon = `/icons/${gameTypeName.toLowerCase()}.svg`
+  const iconAlt = `${translatedGameTypeName} ${t("icon")}`
+
   let bgColor = "white"
   if (GameType.Social === gameType) {
     bgColor = "#03bafc"
@@ -96,8 +105,8 @@ const GameTypeLabel = ({gameType}: GameTypeLabelProps) => {
     bgColor = "#ff5353"
   }
   return (
-    <Tooltip content={t(gameTypeName)} placement="right-end" closeDelay={0}>
-      <Label icon={<Image src={icon} className="h-[1.5em]"/>} text={""} width="2.5em" bgColor={bgColor} />
+    <Tooltip content={translatedGameTypeName} placement="right-end" closeDelay={0}>
+      <Label icon={<Image src={icon} width="40" height="40" alt={iconAlt}  className="h-[1.5em]"/>} text={""} width="3em" bgColor={bgColor} />
     </Tooltip>
   )
 }

@@ -50,6 +50,8 @@
       "Confrontative": "Konfrontatív",
       "Detective": "Detektív",
       "Social": "Közösségi"
-    }
+    },
+    "icon": "ikon",
+    "numberOfPlayersIcon": "játékosszám ikon"
   }
 }
