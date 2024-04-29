@@ -1,25 +1,29 @@
 {
   "Index": {
-    "title": "Hello világ!",
+    "title": "Hello világ!"
+  },
+  "NextOccasion": {
+    "date": "Dátum:",
+    "participants": "Résztvevők:",
     "CountdownTimer": {
       "header": "A következő alkalomig:",
       "NumberPanel": {
         "days": "nap",
         "hours": "óra",
         "minutes": "perc"
-      },
-      "date": "Dátum:",
-      "participants": "Résztvevők:"
-    },
-    "NextOccasion": {
-      "SuggestedGames": {
-        "header": "Ajánlott játékok",
-        "Types": {
-          "Simple": "Egyszerű",
-          "Complex": "Összetett",
-          "Social": "Közösségi"
-        }
       }
+    },
+    "SuggestedGames": {
+      "header": "Ajánlott játékok",
+      "Types": {
+        "Simple": "Egyszerű",
+        "Complex": "Összetett",
+        "Social": "Közösségi"
+      }
+    },
+    "Empty": {
+      "header": "Nincs közelgő alkalom...",
+      "newButton": "Új alkalom szervezése"
     }
   },
   "GameList": {
