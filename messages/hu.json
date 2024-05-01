@@ -26,6 +26,24 @@
       "newButton": "Új alkalom szervezése"
     }
   },
+  "NewOccasion": {
+    "title": "Új alkalom szervezése",
+    "Form": {
+      "DatePicker": {
+        "label": "Az alkalom dátuma",
+        "QuickButtons": {
+          "today": "Ma",
+          "nextWeek": "Jövőhét",
+          "nextMonth": "Következő hónap"
+        }
+      },
+      "TimePicker": {
+        "hour": "Óra",
+        "minute": "Perc"
+      },
+      "submit": "Létrehoz"
+    }
+  },
   "GameList": {
     "header": "Játékaink",
     "numberOfGames": " játék",

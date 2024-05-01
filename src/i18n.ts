@@ -7,6 +7,7 @@ export const locales = ['en', 'hu'] as const;
 
 export const pathnames = {
   '/': '/',
+  '/occasions/new': '/occasions/new'
   // '/dogs': {
   //   hu: '/kutyák',
   //   en: '/dogs',
